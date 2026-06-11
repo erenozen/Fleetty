@@ -1,0 +1,38 @@
+{
+  "name": "fleetty-theme",
+  "displayName": "Fleetty Theme",
+  "description": "VS Code color themes generated from the Fleetty theme JSON files.",
+  "version": "0.0.1",
+  "publisher": "fleetty",
+  "license": "UNLICENSED",
+  "icon": "logo.png",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "scripts": {
+    "build": "node scripts/build-vscode-themes.mjs",
+    "validate": "node scripts/build-vscode-themes.mjs --check"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Fleet Light - Edited",
+        "uiTheme": "vs",
+        "path": "./themes/fleet-light-edited-color-theme.json"
+      },
+      {
+        "label": "Fleet Dark - Edited",
+        "uiTheme": "vs-dark",
+        "path": "./themes/fleet-dark-edited-color-theme.json"
+      },
+      {
+        "label": "Dark Purple - Edited",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dark-purple-edited-color-theme.json"
+      }
+    ]
+  }
+}
