@@ -1,0 +1,14 @@
+{
+  "theme": "Fleetty Dark",
+  "enabled": true,
+  "surfaces": {
+    "editor": "island.background",
+    "sidebar": "background.secondary"
+  },
+  "tokens": [
+    "keyword",
+    "string",
+    "number",
+    "comment"
+  ]
+}

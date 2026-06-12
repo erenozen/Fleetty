@@ -9,18 +9,18 @@ const checkOnly = process.argv.includes("--check");
 
 const sources = [
   {
-    source: "light-edited.json",
-    output: "themes/fleet-light-edited-color-theme.json",
+    source: "Fleetty-Light.json",
+    output: "themes/fleetty-light-color-theme.json",
     type: "vs"
   },
   {
-    source: "dark-edited.json",
-    output: "themes/fleet-dark-edited-color-theme.json",
+    source: "Fleetty-Dark.json",
+    output: "themes/fleetty-dark-color-theme.json",
     type: "vs-dark"
   },
   {
-    source: "dark_purple-edited.json",
-    output: "themes/dark-purple-edited-color-theme.json",
+    source: "Fleetty-Dark-Purple.json",
+    output: "themes/fleetty-dark-purple-color-theme.json",
     type: "vs-dark"
   }
 ];
@@ -43,7 +43,7 @@ const workbenchMappings = [
   ["window.activeBorder", ["border.focused"]],
   ["window.inactiveBorder", ["border"]],
 
-  ["activityBar.background", ["background.secondary"]],
+  ["activityBar.background", ["background.primary"]],
   ["activityBar.foreground", ["text.primary"]],
   ["activityBar.inactiveForeground", ["text.secondary"]],
   ["activityBar.border", ["border"]],
@@ -52,17 +52,17 @@ const workbenchMappings = [
   ["activityBarBadge.background", ["button.primary.background.default"]],
   ["activityBarBadge.foreground", ["button.primary.text.default"]],
 
-  ["sideBar.background", ["background.secondary"]],
+  ["sideBar.background", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
   ["sideBar.foreground", ["text.primary"]],
   ["sideBar.border", ["border"]],
   ["sideBarTitle.foreground", ["text.primary"]],
-  ["sideBarSectionHeader.background", ["background.primary"]],
+  ["sideBarSectionHeader.background", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
   ["sideBarSectionHeader.foreground", ["text.primary"]],
   ["sideBarSectionHeader.border", ["border"]],
 
   ["editorGroup.border", ["border"]],
   ["editorGroup.dropBackground", ["dragAndDrop.background"]],
-  ["editorGroupHeader.tabsBackground", ["background.secondary"]],
+  ["editorGroupHeader.tabsBackground", ["background.primary"]],
   ["editorGroupHeader.tabsBorder", ["border"]],
   ["editorGroupHeader.border", ["border"]],
 
@@ -83,18 +83,18 @@ const workbenchMappings = [
   ["tab.activeModifiedBorder", ["settings.modified.indicator", "editor.gitDiff.text.modified"]],
   ["tab.inactiveModifiedBorder", ["settings.modified.indicator", "editor.gitDiff.text.modified"]],
 
-  ["titleBar.activeBackground", ["background.secondary"]],
+  ["titleBar.activeBackground", ["background.primary"]],
   ["titleBar.activeForeground", ["text.primary"]],
   ["titleBar.inactiveBackground", ["background.primary"]],
   ["titleBar.inactiveForeground", ["text.secondary"]],
   ["titleBar.border", ["border"]],
 
-  ["statusBar.background", ["background.secondary"]],
+  ["statusBar.background", ["background.primary"]],
   ["statusBar.foreground", ["statusBar.text.default", "text.primary"]],
   ["statusBar.border", ["border"]],
   ["statusBar.debuggingBackground", ["button.warning.background.default"]],
   ["statusBar.debuggingForeground", ["button.warning.text.default"]],
-  ["statusBar.noFolderBackground", ["button.secondary.background.default", "background.secondary"]],
+  ["statusBar.noFolderBackground", ["background.primary", "button.secondary.background.default"]],
   ["statusBar.noFolderForeground", ["statusBar.text.default", "text.primary"]],
   ["statusBarItem.hoverBackground", ["ghostButton.off.background.hovered", "listItem.background.hovered"]],
   ["statusBarItem.remoteBackground", ["button.primary.background.default"]],
@@ -104,28 +104,28 @@ const workbenchMappings = [
   ["statusBarItem.warningBackground", ["button.warning.background.default"]],
   ["statusBarItem.warningForeground", ["button.warning.text.default"]],
 
-  ["panel.background", ["background.primary"]],
+  ["panel.background", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
   ["panel.border", ["border"]],
   ["panelTitle.activeForeground", ["text.primary"]],
   ["panelTitle.inactiveForeground", ["text.secondary"]],
   ["panelTitle.activeBorder", ["border.focused"]],
   ["panelInput.border", ["inputField.border.default", "border"]],
   ["panelSection.border", ["border"]],
-  ["panelSectionHeader.background", ["background.secondary"]],
+  ["panelSectionHeader.background", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
   ["panelSectionHeader.foreground", ["text.primary"]],
   ["panelSectionHeader.border", ["border"]],
 
   ["breadcrumb.foreground", ["text.secondary"]],
-  ["breadcrumb.background", ["background.primary"]],
+  ["breadcrumb.background", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
   ["breadcrumb.focusForeground", ["text.primary"]],
   ["breadcrumb.activeSelectionForeground", ["text.primary"]],
   ["breadcrumbPicker.background", ["popup.background"]],
 
   ["list.activeSelectionBackground", ["listItem.background.selected"]],
   ["list.activeSelectionForeground", ["listItem.text.selected"]],
-  ["list.inactiveSelectionBackground", ["listItem.background.focused", "listItem.background.selected"]],
+  ["list.inactiveSelectionBackground", ["listItem.background.selected", "listItem.background.focused"]],
   ["list.inactiveSelectionForeground", ["listItem.text.focused", "listItem.text.selected"]],
-  ["list.focusBackground", ["listItem.background.focused"]],
+  ["list.focusBackground", ["listItem.background.selected", "listItem.background.focused"]],
   ["list.focusForeground", ["listItem.text.focused"]],
   ["list.hoverBackground", ["listItem.background.hovered"]],
   ["list.hoverForeground", ["listItem.text.hovered"]],
@@ -187,7 +187,7 @@ const workbenchMappings = [
   ["scrollbarSlider.hoverBackground", ["scrollbar.thumb.hovered"]],
   ["scrollbarSlider.activeBackground", ["scrollbar.thumb.pressed"]],
 
-  ["editor.background", ["background.primary"]],
+  ["editor.background", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
   ["editor.foreground", ["editor.text", "text.primary"]],
   ["editorLineNumber.foreground", ["editor.lineNumber.default"]],
   ["editorLineNumber.activeForeground", ["editor.lineNumber.current"]],
@@ -227,7 +227,7 @@ const workbenchMappings = [
   ["editorOverviewRuler.warningForeground", ["button.warning.background.default"]],
   ["editorOverviewRuler.infoForeground", ["button.primary.background.default"]],
 
-  ["editorGutter.background", ["background.primary"]],
+  ["editorGutter.background", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
   ["editorGutter.modifiedBackground", ["editor.gitDiff.background.modified"]],
   ["editorGutter.addedBackground", ["editor.gitDiff.background.added"]],
   ["editorGutter.deletedBackground", ["editor.gitDiff.background.deleted"]],
@@ -337,7 +337,7 @@ const workbenchMappings = [
   ["editorMarkerNavigationWarning.background", ["button.warning.background.default"]],
   ["editorMarkerNavigationInfo.background", ["button.primary.background.default"]],
 
-  ["terminal.background", ["background.primary"]],
+  ["terminal.background", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
   ["terminal.foreground", ["text.primary"]],
   ["terminal.selectionBackground", ["editor.selection.focused"]],
   ["terminalCursor.foreground", ["editor.caret.border", "editor.caret.background"]],
@@ -384,6 +384,339 @@ const workbenchMappings = [
   ["settings.focusedRowBorder", ["listItem.border.focused"]],
   ["settings.headerBorder", ["border"]],
   ["settings.sashBorder", ["border"]]
+];
+
+const additionalWorkbenchMappings = [
+  ["widget.border", ["popup.border", "border"]],
+  ["widget.shadow", ["shadow.background.medium", "shadow.background.small"]],
+  ["sash.hoverBorder", ["border.focused"]],
+  ["textPreformat.foreground", ["text.primary"]],
+  ["textPreformat.background", ["snippet.content.background", "background.secondary"]],
+  ["textPreformat.border", ["snippet.content.border", "border"]],
+
+  ["toolbar.hoverBackground", ["ghostButton.off.background.hovered", "button.secondary.background.hovered"]],
+  ["toolbar.hoverOutline", ["border.focused"]],
+  ["toolbar.activeBackground", ["ghostButton.off.background.pressed", "button.secondary.background.pressed"]],
+  ["editorActionList.background", ["popup.background"]],
+  ["editorActionList.foreground", ["popup.text", "text.primary"]],
+  ["editorActionList.focusForeground", ["listItem.text.focused", "text.primary"]],
+  ["editorActionList.focusBackground", ["listItem.background.focused"]],
+
+  ["button.separator", ["button.primary.separator.default"]],
+  ["button.secondaryBorder", ["button.secondary.border.default", "border"]],
+  ["checkbox.disabled.background", ["checkbox.off.background.disabled", "checkbox.on.background.disabled"]],
+  ["checkbox.disabled.foreground", ["checkbox.text.disabled"]],
+  ["radio.activeForeground", ["toggleButton.on.text.default", "text.primary"]],
+  ["radio.activeBackground", ["toggleButton.on.background.default", "checkbox.on.background.default"]],
+  ["radio.activeBorder", ["toggleButton.on.border.default", "border.focused"]],
+  ["radio.inactiveForeground", ["toggleButton.off.text.default", "text.primary"]],
+  ["radio.inactiveBackground", ["toggleButton.off.background.default", "checkbox.off.background.default"]],
+  ["radio.inactiveBorder", ["toggleButton.off.border.default", "checkbox.off.border.default"]],
+  ["radio.inactiveHoverBackground", ["toggleButton.off.background.hovered", "listItem.background.hovered"]],
+  ["inputOption.hoverBackground", ["toggleButton.off.background.hovered", "button.secondary.background.hovered"]],
+
+  ["scrollbar.background", ["scrollbar.track.default", "island.background", "background.primary"]],
+  ["list.activeSelectionIconForeground", ["icon.primary", "listItem.text.selected"]],
+  ["list.inactiveSelectionIconForeground", ["icon.secondary", "listItem.text.focused"]],
+  ["list.inactiveFocusBackground", ["listItem.background.selected", "listItem.background.focused"]],
+  ["list.inactiveFocusOutline", ["listItem.focusBorder", "border.focused"]],
+  ["list.focusOutline", ["listItem.focusBorder", "border.focused"]],
+  ["list.focusAndSelectionOutline", ["listItem.focusBorder", "border.focused"]],
+  ["list.filterMatchBackground", ["completion.match.background", "search.match.background"]],
+  ["list.filterMatchBorder", ["completion.match.text", "border.focused"]],
+  ["list.deemphasizedForeground", ["text.tertiary", "text.secondary"]],
+  ["list.dropBetweenBackground", ["dragAndDrop.border.highlight", "border.focused"]],
+  ["tree.inactiveIndentGuidesStroke", ["tree.compactFolder.separator", "border"]],
+
+  ["activityBar.dropBorder", ["dragAndDrop.border.highlight", "border.focused"]],
+  ["activityBar.activeFocusBorder", ["border.focused"]],
+  ["activityBarTop.foreground", ["text.primary"]],
+  ["activityBarTop.activeBorder", ["border.focused"]],
+  ["activityBarTop.inactiveForeground", ["text.secondary"]],
+  ["activityBarTop.dropBorder", ["dragAndDrop.border.highlight", "border.focused"]],
+  ["activityBarTop.background", ["background.primary"]],
+  ["activityBarTop.activeBackground", ["listItem.background.selected", "background.primary"]],
+  ["activityWarningBadge.foreground", ["button.warning.text.default"]],
+  ["activityWarningBadge.background", ["button.warning.background.default"]],
+  ["activityErrorBadge.foreground", ["button.dangerous.text.default"]],
+  ["activityErrorBadge.background", ["button.dangerous.background.default"]],
+  ["profileBadge.background", ["tag.color.default.neutral.background", "button.secondary.background.default"]],
+  ["profileBadge.foreground", ["tag.color.default.neutral.text", "button.secondary.text.default"]],
+  ["profiles.sashBorder", ["border"]],
+  ["sideBar.dropBackground", ["dragAndDrop.background"]],
+  ["sideBarActivityBarTop.border", ["border"]],
+  ["sideBarTitle.background", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
+  ["sideBarTitle.border", ["border"]],
+  ["sideBarStickyScroll.background", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
+  ["sideBarStickyScroll.border", ["border"]],
+  ["sideBarStickyScroll.shadow", ["shadow.background.small"]],
+
+  ["minimap.findMatchHighlight", ["search.match.background"]],
+  ["minimap.selectionHighlight", ["editor.selection.focused", "editor.currentLine.background.focused"]],
+  ["minimap.errorHighlight", ["button.dangerous.background.default"]],
+  ["minimap.warningHighlight", ["button.warning.background.default"]],
+  ["minimap.background", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
+  ["minimap.selectionOccurrenceHighlight", ["editor.currentLine.background.focused"]],
+  ["minimap.foregroundOpacity", ["text.tertiary"]],
+  ["minimapSlider.background", ["scrollbar.thumb.default"]],
+  ["minimapSlider.hoverBackground", ["scrollbar.thumb.hovered"]],
+  ["minimapSlider.activeBackground", ["scrollbar.thumb.pressed"]],
+  ["minimapGutter.addedBackground", ["editor.gitDiff.background.added"]],
+  ["minimapGutter.modifiedBackground", ["editor.gitDiff.background.modified"]],
+  ["minimapGutter.deletedBackground", ["editor.gitDiff.background.deleted"]],
+
+  ["editorGroup.emptyBackground", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
+  ["editorGroup.focusedEmptyBorder", ["border.focused"]],
+  ["editorGroup.dropIntoPromptForeground", ["text.primary"]],
+  ["editorGroup.dropIntoPromptBackground", ["popup.background"]],
+  ["editorGroup.dropIntoPromptBorder", ["popup.border", "border.focused"]],
+  ["editorPane.background", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
+  ["sideBySideEditor.horizontalBorder", ["border"]],
+  ["sideBySideEditor.verticalBorder", ["border"]],
+
+  ["editor.selectionForeground", ["text.primary"]],
+  ["editor.foldBackground", ["editor.foldedMark.background"]],
+  ["editor.rangeHighlightBackground", ["editor.currentLine.background.default"]],
+  ["editor.rangeHighlightBorder", ["border"]],
+  ["editor.symbolHighlightBackground", ["editor.currentLine.background.focused"]],
+  ["editor.symbolHighlightBorder", ["border.focused"]],
+  ["editorUnicodeHighlight.border", ["button.warning.border.default"]],
+  ["editorUnicodeHighlight.background", ["banner.background.warning"]],
+  ["editor.foldPlaceholderForeground", ["editor.foldedMark.text"]],
+  ["editor.wordHighlightTextBackground", ["editor.currentLine.background.default"]],
+  ["editor.wordHighlightTextBorder", ["border"]],
+  ["editor.wordHighlightBorder", ["border"]],
+  ["editor.wordHighlightStrongBorder", ["border.focused"]],
+  ["editor.snippetTabstopHighlightBackground", ["snippet.background.default"]],
+  ["editor.snippetTabstopHighlightBorder", ["snippet.border.default", "border"]],
+  ["editor.snippetFinalTabstopHighlightBorder", ["border.focused"]],
+  ["editor.inlineValuesForeground", ["text.secondary"]],
+  ["editor.inlineValuesBackground", ["background.secondary"]],
+  ["editor.linkedEditingBackground", ["editor.currentLine.background.focused"]],
+
+  ["editorBracketHighlight.foreground1", ["Blue_110", "Blue_100", "Accent_100"]],
+  ["editorBracketHighlight.foreground2", ["Purple_110", "Violet_110"]],
+  ["editorBracketHighlight.foreground3", ["Green_110", "Green_100"]],
+  ["editorBracketHighlight.foreground4", ["Yellow_110", "Yellow_100"]],
+  ["editorBracketHighlight.foreground5", ["Red_110", "Red_100"]],
+  ["editorBracketHighlight.foreground6", ["Violet_110", "Purple_110"]],
+  ["editorBracketHighlight.unexpectedBracket.foreground", ["text.dangerous"]],
+  ["editorBracketPairGuide.activeBackground1", ["BlueTint_40", "AccentTint_40"]],
+  ["editorBracketPairGuide.activeBackground2", ["PurpleTint_40", "VioletTint_40"]],
+  ["editorBracketPairGuide.activeBackground3", ["GreenTint_40", "GreenTint_20"]],
+  ["editorBracketPairGuide.background1", ["BlueTint_20", "AccentTint_20"]],
+  ["editorBracketPairGuide.background2", ["PurpleTint_20", "VioletTint_20"]],
+  ["editorBracketPairGuide.background3", ["GreenTint_20", "GreenTint_15"]],
+
+  ["editorStickyScroll.background", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
+  ["editorStickyScrollHover.background", ["listItem.background.hovered"]],
+  ["editorStickyScroll.border", ["border"]],
+  ["editorStickyScroll.shadow", ["shadow.background.small"]],
+  ["editorOverviewRuler.bracketMatchForeground", ["border.focused"]],
+  ["editorOverviewRuler.inlineChatInserted", ["editor.gitDiff.background.added"]],
+  ["editorOverviewRuler.inlineChatRemoved", ["editor.gitDiff.background.deleted"]],
+  ["editorGutter.foldingControlForeground", ["editor.foldIndicator.icon.default"]],
+  ["editorCommentsWidget.resolvedBorder", ["border"]],
+  ["editorCommentsWidget.unresolvedBorder", ["border.focused"]],
+  ["editorCommentsWidget.rangeBackground", ["editor.currentLine.background.default"]],
+  ["editorCommentsWidget.rangeActiveBackground", ["editor.currentLine.background.focused"]],
+  ["editorCommentsWidget.replyInputBackground", ["inputField.background.default"]],
+
+  ["editorHoverWidget.statusBarBackground", ["popup.footer.background", "background.secondary"]],
+  ["editorSuggestWidget.focusHighlightForeground", ["completion.match.text"]],
+  ["editorSuggestWidget.selectedIconForeground", ["icon.primary", "text.primary"]],
+  ["editorSuggestWidgetStatus.foreground", ["text.secondary"]],
+  ["editorGhostText.foreground", ["text.tertiary"]],
+  ["editorGhostText.background", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
+  ["editorGhostText.border", ["border"]],
+  ["editorStickyScrollGutter.background", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
+  ["editorInlayHint.foreground", ["text.tertiary"]],
+  ["editorInlayHint.background", ["background.secondary"]],
+  ["editorInlayHint.typeForeground", ["text.secondary"]],
+  ["editorInlayHint.typeBackground", ["background.secondary"]],
+  ["editorInlayHint.parameterForeground", ["text.secondary"]],
+  ["editorInlayHint.parameterBackground", ["background.secondary"]],
+  ["editorLightBulb.foreground", ["button.warning.background.default"]],
+  ["editorLightBulbAutoFix.foreground", ["button.primary.background.default"]],
+  ["editorLightBulbAi.foreground", ["text.ai"]],
+
+  ["debugToolBar.background", ["popup.background"]],
+  ["debugToolBar.border", ["popup.border", "border"]],
+  ["editor.stackFrameHighlightBackground", ["YellowTint_30", "banner.background.warning"]],
+  ["editor.focusedStackFrameHighlightBackground", ["GreenTint_20", "banner.background.positive"]],
+  ["debugView.exceptionLabelForeground", ["button.dangerous.text.default"]],
+  ["debugView.exceptionLabelBackground", ["button.dangerous.background.default"]],
+  ["debugView.stateLabelForeground", ["text.primary"]],
+  ["debugView.stateLabelBackground", ["background.secondary"]],
+  ["debugView.valueChangedHighlight", ["editor.gitDiff.background.modified"]],
+  ["debugTokenExpression.name", ["identifier.variable", "text.primary"]],
+  ["debugTokenExpression.value", ["string", "text.primary"]],
+  ["debugTokenExpression.string", ["string"]],
+  ["debugTokenExpression.boolean", ["boolean"]],
+  ["debugTokenExpression.number", ["number"]],
+  ["debugTokenExpression.error", ["text.dangerous"]],
+  ["debugIcon.breakpointForeground", ["button.dangerous.background.default"]],
+  ["debugIcon.breakpointDisabledForeground", ["text.disabled"]],
+  ["debugIcon.breakpointUnverifiedForeground", ["text.tertiary"]],
+  ["debugIcon.breakpointCurrentStackframeForeground", ["button.warning.background.default"]],
+  ["debugIcon.breakpointStackframeForeground", ["button.primary.background.default"]],
+  ["debugIcon.startForeground", ["text.positive"]],
+  ["debugIcon.pauseForeground", ["button.warning.background.default"]],
+  ["debugIcon.stopForeground", ["text.dangerous"]],
+  ["debugIcon.disconnectForeground", ["text.dangerous"]],
+  ["debugIcon.restartForeground", ["text.positive"]],
+  ["debugIcon.stepOverForeground", ["button.primary.background.default"]],
+  ["debugIcon.stepIntoForeground", ["button.primary.background.default"]],
+  ["debugIcon.stepOutForeground", ["button.primary.background.default"]],
+  ["debugIcon.continueForeground", ["text.positive"]],
+  ["debugIcon.stepBackForeground", ["button.primary.background.default"]],
+
+  ["testing.iconFailed", ["text.dangerous"]],
+  ["testing.iconErrored", ["text.dangerous"]],
+  ["testing.iconPassed", ["text.positive"]],
+  ["testing.runAction", ["text.positive"]],
+  ["testing.iconQueued", ["button.warning.background.default"]],
+  ["testing.iconUnset", ["text.tertiary"]],
+  ["testing.iconSkipped", ["text.disabled"]],
+  ["testing.peekBorder", ["border.focused"]],
+  ["testing.peekHeaderBackground", ["background.secondary"]],
+  ["testing.message.error.decorationForeground", ["text.dangerous"]],
+  ["testing.message.error.lineBackground", ["banner.background.dangerous"]],
+  ["testing.message.info.decorationForeground", ["button.primary.background.default"]],
+  ["testing.message.info.lineBackground", ["banner.background.info"]],
+
+  ["notebook.editorBackground", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
+  ["notebook.cellBorderColor", ["border"]],
+  ["notebook.cellHoverBackground", ["listItem.background.hovered"]],
+  ["notebook.cellInsertionIndicator", ["border.focused"]],
+  ["notebook.cellStatusBarItemHoverBackground", ["ghostButton.off.background.hovered"]],
+  ["notebook.cellToolbarSeparator", ["separator.default", "border"]],
+  ["notebook.focusedCellBackground", ["background.primary"]],
+  ["notebook.focusedCellBorder", ["border.focused"]],
+  ["notebook.focusedEditorBorder", ["border.focused"]],
+  ["notebook.inactiveFocusedCellBorder", ["border"]],
+  ["notebook.inactiveSelectedCellBorder", ["border"]],
+  ["notebook.outputContainerBackgroundColor", ["background.secondary"]],
+  ["notebook.outputContainerBorderColor", ["border"]],
+  ["notebook.selectedCellBackground", ["listItem.background.selected"]],
+  ["notebook.selectedCellBorder", ["border.focused"]],
+  ["notebook.symbolHighlightBackground", ["editor.currentLine.background.focused"]],
+  ["notebookScrollbarSlider.background", ["scrollbar.thumb.default"]],
+  ["notebookScrollbarSlider.hoverBackground", ["scrollbar.thumb.hovered"]],
+  ["notebookScrollbarSlider.activeBackground", ["scrollbar.thumb.pressed"]],
+  ["notebookStatusErrorIcon.foreground", ["text.dangerous"]],
+  ["notebookStatusRunningIcon.foreground", ["button.warning.background.default"]],
+  ["notebookStatusSuccessIcon.foreground", ["text.positive"]],
+
+  ["merge.currentHeaderBackground", ["editor.gitDiff.background.modified"]],
+  ["merge.currentContentBackground", ["BlueTint_15", "AccentTint_15"]],
+  ["merge.incomingHeaderBackground", ["editor.gitDiff.background.added"]],
+  ["merge.incomingContentBackground", ["GreenTint_15", "editor.gitDiff.background.added"]],
+  ["merge.border", ["border"]],
+  ["merge.commonContentBackground", ["YellowTint_15", "banner.background.warning"]],
+  ["merge.commonHeaderBackground", ["YellowTint_30", "button.warning.background.default"]],
+  ["mergeEditor.change.background", ["BlueTint_15", "AccentTint_15"]],
+  ["mergeEditor.change.word.background", ["BlueTint_30", "AccentTint_30"]],
+  ["mergeEditor.conflict.unhandledUnfocused.border", ["button.warning.border.default"]],
+  ["mergeEditor.conflict.unhandledFocused.border", ["button.warning.focusOutline"]],
+  ["mergeEditor.conflict.handledUnfocused.border", ["button.positive.border.default"]],
+  ["mergeEditor.conflict.handledFocused.border", ["button.positive.focusOutline"]],
+  ["mergeEditor.conflict.handled.minimapOverViewRuler", ["button.positive.background.default"]],
+  ["mergeEditor.conflict.unhandled.minimapOverViewRuler", ["button.warning.background.default"]],
+  ["mergeEditor.conflictingLines.background", ["YellowTint_15", "banner.background.warning"]],
+  ["multiDiffEditor.headerBackground", ["background.primary"]],
+  ["multiDiffEditor.background", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
+  ["multiDiffEditor.border", ["border"]],
+
+  ["commandCenter.foreground", ["text.primary"]],
+  ["commandCenter.activeForeground", ["text.primary"]],
+  ["commandCenter.background", ["background.primary", "inputField.background.default"]],
+  ["commandCenter.activeBackground", ["inputField.background.hovered", "listItem.background.hovered"]],
+  ["commandCenter.border", ["inputField.border.default", "border"]],
+  ["commandCenter.inactiveForeground", ["text.secondary"]],
+  ["commandCenter.inactiveBorder", ["border"]],
+  ["commandCenter.activeBorder", ["border.focused"]],
+  ["commandCenter.debuggingBackground", ["button.warning.background.default"]],
+
+  ["extensionButton.prominentForeground", ["button.primary.text.default"]],
+  ["extensionButton.prominentBackground", ["button.primary.background.default"]],
+  ["extensionButton.prominentHoverBackground", ["button.primary.background.hovered"]],
+  ["extensionButton.background", ["button.secondary.background.default"]],
+  ["extensionButton.foreground", ["button.secondary.text.default"]],
+  ["extensionButton.hoverBackground", ["button.secondary.background.hovered"]],
+  ["extensionButton.separator", ["button.secondary.separator.default", "border"]],
+  ["extensionBadge.remoteBackground", ["button.primary.background.default"]],
+  ["extensionBadge.remoteForeground", ["button.primary.text.default"]],
+  ["extensionIcon.starForeground", ["button.warning.background.default"]],
+  ["extensionIcon.verifiedForeground", ["button.primary.background.default"]],
+  ["extensionIcon.preReleaseForeground", ["text.ai"]],
+  ["extensionIcon.sponsorForeground", ["text.dangerous"]],
+
+  ["welcomePage.background", ["background.primary"]],
+  ["welcomePage.progress.background", ["progressBar.determinate.background", "background.secondary"]],
+  ["welcomePage.progress.foreground", ["progressBar.determinate.foreground", "progressBar.indeterminate.foreground"]],
+  ["welcomePage.tileBackground", ["background.secondary"]],
+  ["welcomePage.tileHoverBackground", ["listItem.background.hovered"]],
+  ["welcomePage.tileShadow", ["shadow.background.small"]],
+  ["walkThrough.embeddedEditorBackground", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
+  ["walkthrough.stepTitle.foreground", ["text.primary"]],
+
+  ["charts.foreground", ["text.primary"]],
+  ["charts.lines", ["border"]],
+  ["charts.red", ["text.dangerous"]],
+  ["charts.blue", ["button.primary.background.default"]],
+  ["charts.yellow", ["button.warning.background.default"]],
+  ["charts.orange", ["Yellow_100", "button.warning.background.default"]],
+  ["charts.green", ["text.positive"]],
+  ["charts.purple", ["text.ai"]],
+  ["ports.iconRunningProcessForeground", ["text.positive"]],
+
+  ["symbolIcon.arrayForeground", ["text.primary"]],
+  ["symbolIcon.booleanForeground", ["boolean"]],
+  ["symbolIcon.classForeground", ["identifier.type.class"]],
+  ["symbolIcon.colorForeground", ["propertyValue.css"]],
+  ["symbolIcon.constantForeground", ["identifier.constant"]],
+  ["symbolIcon.constructorForeground", ["identifier.function.declaration"]],
+  ["symbolIcon.enumeratorForeground", ["identifier.type.enum"]],
+  ["symbolIcon.enumeratorMemberForeground", ["identifier.constant"]],
+  ["symbolIcon.eventForeground", ["identifier.function.call"]],
+  ["symbolIcon.fieldForeground", ["identifier.field"]],
+  ["symbolIcon.fileForeground", ["text.primary"]],
+  ["symbolIcon.folderForeground", ["text.secondary"]],
+  ["symbolIcon.functionForeground", ["identifier.function.call"]],
+  ["symbolIcon.interfaceForeground", ["identifier.interface"]],
+  ["symbolIcon.keyForeground", ["key.json", "key.yaml"]],
+  ["symbolIcon.keywordForeground", ["keyword"]],
+  ["symbolIcon.methodForeground", ["identifier.function.call"]],
+  ["symbolIcon.moduleForeground", ["identifier.package.go", "text.secondary"]],
+  ["symbolIcon.namespaceForeground", ["identifier.package.go", "text.secondary"]],
+  ["symbolIcon.nullForeground", ["identifier.constant.predefined"]],
+  ["symbolIcon.numberForeground", ["number"]],
+  ["symbolIcon.objectForeground", ["identifier.type"]],
+  ["symbolIcon.operatorForeground", ["punctuation.operator"]],
+  ["symbolIcon.packageForeground", ["identifier.package.go", "text.secondary"]],
+  ["symbolIcon.propertyForeground", ["identifier.field"]],
+  ["symbolIcon.referenceForeground", ["link"]],
+  ["symbolIcon.snippetForeground", ["snippet"]],
+  ["symbolIcon.stringForeground", ["string"]],
+  ["symbolIcon.structForeground", ["identifier.type.struct"]],
+  ["symbolIcon.textForeground", ["text.primary"]],
+  ["symbolIcon.typeParameterForeground", ["identifier.typeParameter"]],
+  ["symbolIcon.unitForeground", ["number.unit.css"]],
+  ["symbolIcon.variableForeground", ["identifier.variable", "text.primary"]],
+
+  ["scmGraph.foreground1", ["Blue_110", "Accent_100"]],
+  ["scmGraph.foreground2", ["Green_110", "Green_100"]],
+  ["scmGraph.foreground3", ["Yellow_110", "Yellow_100"]],
+  ["scmGraph.foreground4", ["Purple_110", "Violet_110"]],
+  ["scmGraph.foreground5", ["Red_110", "Red_100"]],
+  ["scmGraph.historyItemRefColor", ["text.primary"]],
+  ["scmGraph.historyItemRemoteRefColor", ["text.ai"]],
+  ["scmGraph.historyItemBaseRefColor", ["text.positive"]],
+  ["scmGraph.historyItemHoverLabelForeground", ["listItem.text.hovered"]],
+  ["scmGraph.historyItemHoverLabelBackground", ["listItem.background.hovered"]],
+  ["scmGraph.historyItemHoverDefaultLabelForeground", ["text.primary"]],
+  ["scmGraph.historyItemHoverDefaultLabelBackground", ["background.secondary"]]
 ];
 
 const tokenScopeMappings = {
@@ -472,7 +805,7 @@ const tokenScopeMappings = {
   "property.php": ["variable.other.property.php"],
   "property.static.php": ["variable.other.property.static.php"],
   "propertyName.css": ["support.type.property-name.css"],
-  "propertyValue.css": ["support.constant.property-value.css", "constant.other.color.rgb-value.css"],
+  "propertyValue.css": ["support.constant.property-value.css"],
   punctuation: ["punctuation", "punctuation.kotlin"],
   "punctuation.css": ["punctuation.css"],
   "punctuation.operator": ["keyword.operator", "punctuation.separator", "keyword.operator.kotlin"],
@@ -500,6 +833,784 @@ const tokenScopeMappings = {
   "transparent": ["meta.transparent"],
   "url.css": ["variable.parameter.url.css", "string.other.url.css"],
   "value.yaml": ["string.unquoted.yaml", "constant.language.yaml"]
+};
+
+const additionalTokenScopeMappings = {
+  comment: [
+    "comment.line.double-slash.java",
+    "comment.block.java",
+    "comment.line.double-slash.js",
+    "comment.block.js",
+    "comment.line.double-slash.jsx",
+    "comment.block.jsx",
+    "comment.line.double-slash.ts",
+    "comment.block.ts",
+    "comment.line.double-slash.tsx",
+    "comment.block.tsx",
+    "comment.line.number-sign.python",
+    "comment.line.double-slash.go",
+    "comment.line.double-slash.rust",
+    "comment.block.rust",
+    "comment.line.double-slash.c",
+    "comment.block.c",
+    "comment.line.double-slash.cpp",
+    "comment.block.cpp",
+    "comment.line.double-slash.cs",
+    "comment.block.cs",
+    "comment.line.double-slash.swift",
+    "comment.block.swift",
+    "comment.line.number-sign.ruby",
+    "comment.line.number-sign.shell",
+    "comment.line.double-dash.sql",
+    "comment.block.sql",
+    "comment.line.number-sign.dockerfile",
+    "comment.line.number-sign.toml",
+    "comment.line.semicolon.ini",
+    "comment.line.number-sign.properties"
+  ],
+  "comment.doc": [
+    "comment.block.documentation.java",
+    "comment.block.documentation.js",
+    "comment.block.documentation.ts",
+    "comment.block.documentation.cs",
+    "comment.block.documentation.php",
+    "comment.block.documentation.rust",
+    "comment.line.documentation.swift",
+    "string.quoted.docstring.multi.python",
+    "string.quoted.docstring.multi.python punctuation.definition.string.begin.python",
+    "string.quoted.docstring.multi.python punctuation.definition.string.end.python"
+  ],
+  "comment.doc.tag": [
+    "keyword.other.documentation.java",
+    "keyword.other.documentation.js",
+    "keyword.other.documentation.ts",
+    "storage.type.class.jsdoc",
+    "entity.name.tag.documentation.php"
+  ],
+  "comment.todo": [
+    "keyword.other.todo.java",
+    "keyword.other.todo.kotlin",
+    "keyword.other.todo.python",
+    "keyword.other.todo.rust",
+    "keyword.other.todo.go",
+    "keyword.other.todo.c",
+    "keyword.other.todo.cpp",
+    "keyword.other.todo.cs",
+    "keyword.other.todo.swift"
+  ],
+  keyword: [
+    "keyword.control.import.java",
+    "keyword.control.import.kotlin",
+    "keyword.control.import.js",
+    "keyword.control.import.ts",
+    "keyword.control.from.python",
+    "keyword.control.import.python",
+    "keyword.control.flow.python",
+    "keyword.control.conditional.python",
+    "keyword.control.repeat.python",
+    "keyword.control.exception.python",
+    "keyword.control.return.python",
+    "keyword.operator.logical.python",
+    "storage.type.function.python",
+    "keyword.control.rust",
+    "keyword.control.go",
+    "keyword.control.c",
+    "keyword.control.cpp",
+    "keyword.control.cs",
+    "keyword.control.swift",
+    "keyword.control.php",
+    "keyword.control.ruby",
+    "keyword.control.shell",
+    "keyword.other.DML.sql",
+    "keyword.other.DDL.sql",
+    "keyword.other.dockerfile",
+    "keyword.other.special-method.dockerfile",
+    "storage.type.java",
+    "storage.type.kotlin",
+    "storage.type.cs",
+    "storage.type.swift",
+    "storage.type.rust",
+    "storage.type.go",
+    "storage.type.c",
+    "storage.type.cpp",
+    "storage.type.php",
+    "storage.type.sql",
+    "storage.modifier.java",
+    "storage.modifier.kotlin",
+    "storage.modifier.cs",
+    "storage.modifier.swift",
+    "storage.modifier.rust"
+  ],
+  "keyword.typeModifier": [
+    "storage.modifier.access.java",
+    "storage.modifier.access.kotlin",
+    "storage.modifier.access.cs",
+    "storage.modifier.async.js",
+    "storage.modifier.async.ts",
+    "storage.modifier.async.cs",
+    "storage.modifier.static.java",
+    "storage.modifier.static.kotlin",
+    "storage.modifier.static.cs",
+    "storage.modifier.final.java",
+    "storage.modifier.final.kotlin",
+    "storage.modifier.readonly.cs",
+    "storage.modifier.mut.rust",
+    "storage.modifier.unsafe.rust"
+  ],
+  metadata: [
+    "meta.annotation.java",
+    "meta.annotation.kotlin",
+    "meta.annotation.cs",
+    "meta.annotation.rust",
+    "meta.decorator.python",
+    "meta.decorator.js",
+    "meta.decorator.ts",
+    "punctuation.decorator.python",
+    "entity.name.function.decorator.python",
+    "entity.name.type.annotation.java",
+    "entity.name.type.annotation.kotlin",
+    "entity.name.type.attribute.rust"
+  ],
+  boolean: [
+    "constant.language.boolean.java",
+    "constant.language.boolean.js",
+    "constant.language.boolean.ts",
+    "constant.language.boolean.python",
+    "constant.language.boolean.go",
+    "constant.language.boolean.rust",
+    "constant.language.boolean.c",
+    "constant.language.boolean.cpp",
+    "constant.language.boolean.cs",
+    "constant.language.boolean.swift",
+    "constant.language.boolean.php",
+    "constant.language.boolean.ruby",
+    "constant.language.boolean.yaml",
+    "constant.language.boolean.toml"
+  ],
+  number: [
+    "constant.numeric.decimal",
+    "constant.numeric.integer",
+    "constant.numeric.float",
+    "constant.numeric.hex",
+    "constant.numeric.binary",
+    "constant.numeric.octal",
+    "constant.numeric.java",
+    "constant.numeric.js",
+    "constant.numeric.ts",
+    "constant.numeric.python",
+    "constant.numeric.go",
+    "constant.numeric.rust",
+    "constant.numeric.c",
+    "constant.numeric.cpp",
+    "constant.numeric.cs",
+    "constant.numeric.swift",
+    "constant.numeric.php",
+    "constant.numeric.ruby",
+    "constant.numeric.sql",
+    "constant.numeric.toml"
+  ],
+  string: [
+    "string.quoted.single",
+    "string.quoted.double",
+    "string.quoted.triple",
+    "string.quoted.raw",
+    "string.template",
+    "string.interpolated",
+    "string.quoted.single.java",
+    "string.quoted.double.java",
+    "string.quoted.single.js",
+    "string.quoted.double.js",
+    "string.template.js",
+    "string.quoted.single.ts",
+    "string.quoted.double.ts",
+    "string.template.ts",
+    "string.quoted.single.python",
+    "string.quoted.double.python",
+    "string.quoted.single.go",
+    "string.quoted.double.go",
+    "string.quoted.double.rust",
+    "string.quoted.single.c",
+    "string.quoted.double.c",
+    "string.quoted.single.cpp",
+    "string.quoted.double.cpp",
+    "string.quoted.single.cs",
+    "string.quoted.double.cs",
+    "string.quoted.double.swift",
+    "string.quoted.single.php",
+    "string.quoted.double.php",
+    "string.quoted.single.ruby",
+    "string.quoted.double.ruby",
+    "string.quoted.single.shell",
+    "string.quoted.double.shell",
+    "string.quoted.single.sql",
+    "string.quoted.double.sql",
+    "string.quoted.double.dockerfile",
+    "string.quoted.single.toml",
+    "string.quoted.double.toml",
+    "string.quoted.double.ini",
+    "string.unquoted.properties"
+  ],
+  "string.escape": [
+    "constant.character.escape.java",
+    "constant.character.escape.js",
+    "constant.character.escape.ts",
+    "constant.character.escape.python",
+    "constant.character.escape.go",
+    "constant.character.escape.rust",
+    "constant.character.escape.c",
+    "constant.character.escape.cpp",
+    "constant.character.escape.cs",
+    "constant.character.escape.swift",
+    "constant.character.escape.php",
+    "constant.character.escape.ruby",
+    "constant.character.escape.shell"
+  ],
+  "string.regexp": [
+    "string.regexp.js",
+    "string.regexp.ts",
+    "string.regexp.python",
+    "string.regexp.ruby",
+    "string.regexp.php",
+    "string.regexp.go",
+    "constant.other.character-class.regexp",
+    "keyword.operator.quantifier.regexp"
+  ],
+  "identifier.function.call": [
+    "meta.function-call",
+    "meta.function-call entity.name.function",
+    "entity.name.function.java",
+    "entity.name.function.method.java",
+    "entity.name.function.js",
+    "entity.name.function.ts",
+    "entity.name.function.python",
+    "entity.name.function.go",
+    "entity.name.function.rust",
+    "entity.name.function.c",
+    "entity.name.function.cpp",
+    "entity.name.function.cs",
+    "entity.name.function.swift",
+    "entity.name.function.php",
+    "entity.name.function.ruby",
+    "support.function.builtin.shell",
+    "entity.name.function.sql"
+  ],
+  "identifier.function.declaration": [
+    "meta.function entity.name.function.java",
+    "meta.function entity.name.function.kotlin",
+    "meta.function entity.name.function.js",
+    "meta.function entity.name.function.ts",
+    "meta.function entity.name.function.python",
+    "meta.function entity.name.function.go",
+    "meta.function entity.name.function.rust",
+    "meta.function entity.name.function.c",
+    "meta.function entity.name.function.cpp",
+    "meta.function entity.name.function.cs",
+    "meta.function entity.name.function.swift",
+    "meta.function entity.name.function.php",
+    "meta.function entity.name.function.ruby",
+    "entity.name.function.definition.shell"
+  ],
+  "identifier.method.static": [
+    "entity.name.function.static.java",
+    "entity.name.function.static.kotlin",
+    "entity.name.function.static.cs",
+    "entity.name.function.static.swift"
+  ],
+  "identifier.type": [
+    "support.type.builtin",
+    "support.type.builtin.java",
+    "support.type.builtin.kotlin",
+    "support.type.builtin.python",
+    "support.type.builtin.go",
+    "support.type.builtin.rust",
+    "support.type.builtin.c",
+    "support.type.builtin.cpp",
+    "support.type.builtin.cs",
+    "support.type.builtin.swift",
+    "support.type.builtin.php",
+    "support.type.builtin.ruby"
+  ],
+  "identifier.type.class": [
+    "entity.name.type.class.java",
+    "entity.name.type.class.js",
+    "entity.name.type.class.ts",
+    "entity.name.type.class.python",
+    "entity.name.type.class.go",
+    "entity.name.type.class.rust",
+    "entity.name.type.class.cpp",
+    "entity.name.type.class.cs",
+    "entity.name.type.class.swift",
+    "entity.name.type.class.php",
+    "entity.name.type.class.ruby",
+    "support.class.component.tsx",
+    "support.class.component.jsx"
+  ],
+  "identifier.interface": [
+    "entity.name.type.interface.java",
+    "entity.name.type.interface.ts",
+    "entity.name.type.interface.cs",
+    "entity.name.type.protocol.swift",
+    "entity.name.type.trait.rust"
+  ],
+  "identifier.type.enum": [
+    "entity.name.type.enum.java",
+    "entity.name.type.enum.kotlin",
+    "entity.name.type.enum.cs",
+    "entity.name.type.enum.swift",
+    "entity.name.type.enum.rust"
+  ],
+  "identifier.type.struct": [
+    "entity.name.type.struct.go",
+    "entity.name.type.struct.rust",
+    "entity.name.type.struct.c",
+    "entity.name.type.struct.cpp",
+    "entity.name.type.struct.swift"
+  ],
+  "identifier.typeParameter": [
+    "entity.name.type.parameter.java",
+    "entity.name.type.parameter.ts",
+    "entity.name.type.parameter.cs",
+    "entity.name.type.parameter.rust",
+    "entity.name.type.parameter.swift"
+  ],
+  "identifier.parameter": [
+    "variable.parameter.java",
+    "variable.parameter.kotlin",
+    "variable.parameter.js",
+    "variable.parameter.ts",
+    "variable.parameter.python",
+    "variable.parameter.go",
+    "variable.parameter.rust",
+    "variable.parameter.c",
+    "variable.parameter.cpp",
+    "variable.parameter.cs",
+    "variable.parameter.swift",
+    "variable.parameter.php",
+    "variable.parameter.ruby"
+  ],
+  "identifier.namedArgument": [
+    "variable.parameter.function-call.python",
+    "variable.parameter.named.cs",
+    "variable.parameter.named.swift",
+    "variable.parameter.named.ruby"
+  ],
+  "identifier.field": [
+    "variable.other.object.property",
+    "variable.other.property.java",
+    "variable.other.property.js",
+    "variable.other.property.ts",
+    "variable.other.property.python",
+    "variable.other.property.go",
+    "variable.other.property.rust",
+    "variable.other.property.cs",
+    "variable.other.property.swift",
+    "variable.other.member.c",
+    "variable.other.member.cpp"
+  ],
+  "identifier.constant": [
+    "variable.other.constant.java",
+    "variable.other.constant.kotlin",
+    "variable.other.constant.js",
+    "variable.other.constant.ts",
+    "variable.other.constant.python",
+    "variable.other.constant.go",
+    "variable.other.constant.rust",
+    "variable.other.constant.cs",
+    "variable.other.constant.swift",
+    "constant.other.symbol.ruby"
+  ],
+  "identifier.constant.predefined": [
+    "constant.language.null",
+    "constant.language.null.java",
+    "constant.language.null.kotlin",
+    "constant.language.null.js",
+    "constant.language.null.ts",
+    "constant.language.none.python",
+    "constant.language.nil.go",
+    "constant.language.nil.ruby",
+    "constant.language.unit.rust",
+    "constant.language.undefined.js",
+    "support.constant.math"
+  ],
+  "identifier.variable": [
+    "variable.other.readwrite.java",
+    "variable.other.readwrite.kotlin",
+    "variable.other.readwrite.js",
+    "variable.other.readwrite.ts",
+    "variable.other.readwrite.python",
+    "variable.other.readwrite.go",
+    "variable.other.readwrite.rust",
+    "variable.other.readwrite.c",
+    "variable.other.readwrite.cpp",
+    "variable.other.readwrite.cs",
+    "variable.other.readwrite.swift",
+    "variable.other.readwrite.php",
+    "variable.other.readwrite.ruby",
+    "variable.other.normal.shell"
+  ],
+  "identifier.package.go": [
+    "entity.name.namespace",
+    "entity.name.namespace.java",
+    "entity.name.namespace.kotlin",
+    "entity.name.namespace.csharp",
+    "entity.name.namespace.cpp",
+    "entity.name.package",
+    "entity.name.package.java",
+    "entity.name.package.kotlin",
+    "support.module.node.js",
+    "support.module.node.ts"
+  ],
+  "identifier.this": [
+    "variable.language.this.java",
+    "variable.language.this.js",
+    "variable.language.this.ts",
+    "variable.language.self.python",
+    "variable.language.self.ruby",
+    "variable.language.self.swift"
+  ],
+  punctuation: [
+    "punctuation.definition.parameters",
+    "punctuation.definition.arguments",
+    "punctuation.definition.block",
+    "punctuation.section.block",
+    "punctuation.terminator.statement",
+    "punctuation.separator.delimiter"
+  ],
+  "punctuation.operator": [
+    "keyword.operator.assignment",
+    "keyword.operator.arithmetic",
+    "keyword.operator.comparison",
+    "keyword.operator.logical",
+    "keyword.operator.expression",
+    "keyword.operator.optional",
+    "keyword.operator.nullable",
+    "keyword.operator.spread",
+    "keyword.operator.sql",
+    "punctuation.separator.key-value"
+  ],
+  "attributeName.html": [
+    "entity.other.attribute-name.jsx",
+    "entity.other.attribute-name.tsx",
+    "entity.other.attribute-name.vue",
+    "entity.other.attribute-name.svelte"
+  ],
+  "attributeValue.html": [
+    "string.quoted.jsx",
+    "string.quoted.tsx",
+    "string.quoted.vue",
+    "string.quoted.svelte"
+  ],
+  "tagName.html": [
+    "entity.name.tag.jsx",
+    "entity.name.tag.tsx",
+    "entity.name.tag.vue",
+    "entity.name.tag.svelte"
+  ],
+  "tagName.custom.html": [
+    "support.class.component.jsx",
+    "support.class.component.tsx",
+    "entity.name.tag.component.vue",
+    "entity.name.tag.component.svelte"
+  ],
+  "key.json": [
+    "support.type.property-name.jsonc",
+    "meta.structure.dictionary.key.jsonc string.quoted.double.jsonc"
+  ],
+  "key.yaml": [
+    "entity.name.tag.yaml",
+    "support.type.property-name.yaml",
+    "support.type.property-name.toml",
+    "entity.name.section.group-title.ini",
+    "keyword.other.definition.ini",
+    "support.type.property-name.properties"
+  ],
+  "value.yaml": [
+    "string.unquoted.toml",
+    "constant.language.toml",
+    "string.unquoted.ini",
+    "string.unquoted.properties"
+  ],
+  "propertyName.css": [
+    "support.type.property-name.scss",
+    "support.type.property-name.sass",
+    "support.type.property-name.less"
+  ],
+  "propertyValue.css": [
+    "support.constant.property-value.scss",
+    "support.constant.property-value.sass",
+    "support.constant.property-value.less"
+  ],
+  "selector.css": [
+    "entity.name.tag.scss",
+    "entity.name.tag.sass",
+    "entity.name.tag.less"
+  ],
+  "selector.class.css": [
+    "entity.other.attribute-name.class.scss",
+    "entity.other.attribute-name.class.sass",
+    "entity.other.attribute-name.class.less"
+  ],
+  "selector.id.css": [
+    "entity.other.attribute-name.id.scss",
+    "entity.other.attribute-name.id.sass",
+    "entity.other.attribute-name.id.less"
+  ],
+  "selector.pseudo.css": [
+    "entity.other.attribute-name.pseudo-class.scss",
+    "entity.other.attribute-name.pseudo-element.scss",
+    "entity.other.attribute-name.pseudo-class.less",
+    "entity.other.attribute-name.pseudo-element.less"
+  ],
+  "number.unit.css": [
+    "keyword.other.unit.scss",
+    "keyword.other.unit.sass",
+    "keyword.other.unit.less"
+  ],
+  "markup.heading": [
+    "punctuation.definition.heading.markdown",
+    "markup.heading.setext"
+  ],
+  "markup.bold": [
+    "punctuation.definition.bold.markdown"
+  ],
+  "markup.italic": [
+    "punctuation.definition.italic.markdown"
+  ],
+  "markup.href": [
+    "string.other.link.description.markdown",
+    "markup.underline.link.image.markdown"
+  ],
+  "markup.code.block": [
+    "markup.raw.inline.markdown",
+    "markup.fenced_code.block.markdown punctuation.definition.markdown"
+  ],
+  link: [
+    "markup.underline.link.http.hyperlink",
+    "meta.link.inline.markdown"
+  ],
+  "diff.added": [
+    "markup.inserted.diff",
+    "meta.diff.header.to-file"
+  ],
+  "diff.deleted": [
+    "markup.deleted.diff",
+    "meta.diff.header.from-file"
+  ],
+  "diff.modified": [
+    "markup.changed.diff",
+    "meta.diff.range"
+  ],
+  "problem.error": [
+    "invalid.illegal",
+    "invalid.broken"
+  ],
+  "problem.warning": [
+    "invalid.deprecated",
+    "markup.warning"
+  ]
+};
+
+const htmlCssTokenScopeMappings = {
+  "tag.html": [
+    "meta.tag.html",
+    "meta.tag.structure.html",
+    "meta.tag.metadata.html",
+    "meta.tag.inline.html",
+    "meta.tag.block.html",
+    "meta.tag.any.html",
+    "punctuation.definition.tag.begin.html",
+    "punctuation.definition.tag.end.html",
+    "punctuation.definition.tag.begin.xml",
+    "punctuation.definition.tag.end.xml",
+    "punctuation.definition.tag.html",
+    "punctuation.definition.tag.xml"
+  ],
+  "tagName.html": [
+    "meta.tag.html entity.name.tag.html",
+    "meta.tag.structure.html entity.name.tag.html",
+    "meta.tag.metadata.html entity.name.tag.html",
+    "meta.tag.inline.html entity.name.tag.html",
+    "meta.tag.block.html entity.name.tag.html",
+    "meta.tag.any.html entity.name.tag.html",
+    "entity.name.tag.html",
+    "entity.name.tag.xml"
+  ],
+  "tagName.custom.html": [
+    "meta.tag.html entity.name.tag.custom.html",
+    "meta.tag.html support.class.component.html",
+    "entity.name.tag.custom.html",
+    "support.class.component.html"
+  ],
+  "attributeName.html": [
+    "meta.tag.html entity.other.attribute-name.html",
+    "meta.tag.structure.html entity.other.attribute-name.html",
+    "meta.tag.metadata.html entity.other.attribute-name.html",
+    "meta.tag.inline.html entity.other.attribute-name.html",
+    "meta.tag.block.html entity.other.attribute-name.html",
+    "meta.tag.any.html entity.other.attribute-name.html",
+    "entity.other.attribute-name.html",
+    "entity.other.attribute-name.xml"
+  ],
+  "attributeValue.html": [
+    "meta.tag.html string.quoted.html",
+    "meta.tag.html string.quoted.double.html",
+    "meta.tag.html string.quoted.single.html",
+    "meta.tag.structure.html string.quoted.html",
+    "meta.tag.metadata.html string.quoted.html",
+    "meta.tag.inline.html string.quoted.html",
+    "meta.tag.block.html string.quoted.html",
+    "meta.tag.any.html string.quoted.html",
+    "meta.tag.html punctuation.definition.string.begin.html",
+    "meta.tag.html punctuation.definition.string.end.html",
+    "string.quoted.html",
+    "string.quoted.xml"
+  ],
+  "entityReference.html": [
+    "constant.character.entity.html",
+    "constant.character.entity.xml",
+    "punctuation.definition.entity.html"
+  ],
+  "keyword.css": [
+    "keyword.control.at-rule.css",
+    "keyword.control.at-rule.media.css",
+    "keyword.control.at-rule.import.css",
+    "keyword.control.at-rule.charset.css",
+    "keyword.control.at-rule.supports.css",
+    "keyword.control.at-rule.keyframes.css",
+    "meta.at-rule.media.css keyword.control.at-rule.media.css",
+    "meta.at-rule.css keyword.control.at-rule.css"
+  ],
+  "selector.css": [
+    "source.css entity.name.tag.css",
+    "source.css.embedded.html entity.name.tag.css",
+    "meta.selector.css entity.name.tag.css",
+    "meta.selector.css entity.other.attribute-name.css"
+  ],
+  "selector.tag.css": [
+    "meta.selector.css entity.name.tag.css",
+    "source.css.embedded.html meta.selector.css entity.name.tag.css",
+    "entity.name.tag.css"
+  ],
+  "selector.id.css": [
+    "meta.selector.css entity.other.attribute-name.id.css",
+    "source.css.embedded.html entity.other.attribute-name.id.css",
+    "entity.other.attribute-name.id.css",
+    "punctuation.definition.entity.css"
+  ],
+  "selector.class.css": [
+    "meta.selector.css entity.other.attribute-name.class.css",
+    "source.css.embedded.html entity.other.attribute-name.class.css",
+    "entity.other.attribute-name.class.css"
+  ],
+  "selector.pseudo.css": [
+    "meta.selector.css entity.other.attribute-name.pseudo-class.css",
+    "meta.selector.css entity.other.attribute-name.pseudo-element.css",
+    "source.css.embedded.html entity.other.attribute-name.pseudo-class.css",
+    "source.css.embedded.html entity.other.attribute-name.pseudo-element.css",
+    "entity.other.attribute-name.pseudo-class.css",
+    "entity.other.attribute-name.pseudo-element.css"
+  ],
+  "propertyName.css": [
+    "meta.property-name.css",
+    "meta.property-list.css meta.property-name.css",
+    "meta.property-list.css support.type.property-name.css",
+    "source.css.embedded.html meta.property-name.css",
+    "source.css.embedded.html support.type.property-name.css",
+    "support.type.property-name.css",
+    "support.type.custom-property.name.css",
+    "meta.property-name.css support.type.custom-property.name.css",
+    "meta.property-list.css support.type.custom-property.name.css",
+    "source.css.embedded.html support.type.custom-property.name.css",
+    "variable.other.custom-property.css",
+    "meta.property-name.css variable.other.custom-property.css"
+  ],
+  "propertyValue.css": [
+    "meta.property-value.css support.constant.property-value.css",
+    "meta.property-list.css meta.property-value.css support.constant.property-value.css",
+    "source.css.embedded.html meta.property-value.css support.constant.property-value.css",
+    "support.constant.property-value.css",
+    "constant.language.color.css"
+  ],
+  "hex.css": [
+    "meta.property-value.css constant.other.color.rgb-value.css",
+    "meta.property-list.css constant.other.color.rgb-value.css",
+    "source.css.embedded.html constant.other.color.rgb-value.css",
+    "constant.other.color.rgb-value.css",
+    "constant.other.color.rgb-value.hex.css"
+  ],
+  "number.css": [
+    "meta.property-value.css constant.numeric.css",
+    "meta.property-list.css constant.numeric.css",
+    "source.css.embedded.html constant.numeric.css",
+    "constant.numeric.css"
+  ],
+  "number.unit.css": [
+    "meta.property-value.css keyword.other.unit.css",
+    "meta.property-list.css keyword.other.unit.css",
+    "source.css.embedded.html keyword.other.unit.css",
+    "keyword.other.unit.css"
+  ],
+  "string.css": [
+    "meta.property-value.css string.quoted.css",
+    "meta.property-list.css string.quoted.css",
+    "source.css.embedded.html string.quoted.css",
+    "string.quoted.css",
+    "string.quoted.double.css",
+    "string.quoted.single.css"
+  ],
+  "identifier.css": [
+    "source.css variable.css",
+    "source.css.embedded.html variable.css",
+    "meta.property-value.css variable.css",
+    "meta.property-value.css variable.other.custom-property.css",
+    "variable.css"
+  ],
+  "identifier.function.css": [
+    "meta.function-call.css entity.name.function.css",
+    "meta.property-value.css support.function.misc.css",
+    "source.css.embedded.html support.function.misc.css",
+    "support.function.misc.css",
+    "entity.name.function.css"
+  ],
+  "identifier.variable.css": [
+    "meta.function-call.css variable.parameter.css",
+    "meta.property-value.css variable.parameter.css",
+    "meta.property-value.css variable.parameter.url.css",
+    "source.css.embedded.html variable.parameter.css",
+    "source.css.embedded.html variable.parameter.url.css",
+    "variable.parameter.css",
+    "variable.parameter.url.css"
+  ],
+  "punctuation.css": [
+    "source.css punctuation.css",
+    "source.css.embedded.html punctuation.css",
+    "punctuation.section.property-list.begin.bracket.curly.css",
+    "punctuation.section.property-list.end.bracket.curly.css",
+    "punctuation.separator.key-value.css",
+    "punctuation.terminator.rule.css",
+    "punctuation.separator.list.comma.css",
+    "punctuation.definition.entity.css",
+    "punctuation.definition.keyword.css",
+    "punctuation.definition.string.begin.css",
+    "punctuation.definition.string.end.css"
+  ],
+  "mixin.css": [
+    "entity.name.function.mixin.css",
+    "meta.function.mixin.css entity.name.function.css"
+  ],
+  "url.css": [
+    "meta.property-value.css variable.parameter.url.css",
+    "meta.property-value.css string.other.url.css",
+    "source.css.embedded.html variable.parameter.url.css",
+    "source.css.embedded.html string.other.url.css",
+    "variable.parameter.url.css",
+    "string.other.url.css"
+  ],
+  "interpolation.css": [
+    "source.css.embedded.html",
+    "source.css.embedded",
+    "meta.embedded.css"
+  ]
 };
 
 const semanticMappings = {
@@ -537,6 +1648,117 @@ const semanticMappings = {
   "type.defaultLibrary": "identifier.constant.predefined",
   "parameter.declaration": "identifier.parameter",
   "property.static": "identifier.field.static"
+};
+
+const additionalSemanticMappings = {
+  control: "keyword",
+  conditional: "keyword",
+  repeat: "keyword",
+  exception: "keyword",
+  "keyword.control": "keyword",
+  "keyword.conditional": "keyword",
+  "keyword.repeat": "keyword",
+  "keyword.exception": "keyword",
+  "keyword.return": "keyword",
+  "operator.logical": "keyword",
+  "function.builtin": "identifier.constant.predefined",
+  "type:html": "tagName.html",
+  "class:html": "tagName.custom.html",
+  "property:html": "attributeName.html",
+  "property.declaration:html": "attributeName.html",
+  "string:html": "attributeValue.html",
+  "operator:html": "tag.html",
+  "type:css": "selector.tag.css",
+  "class:css": "selector.class.css",
+  "property:css": "propertyName.css",
+  "property.declaration:css": "propertyName.css",
+  "property.readonly:css": "propertyName.css",
+  "variable:css": "identifier.css",
+  "variable.declaration:css": "propertyName.css",
+  "function:css": "identifier.function.css",
+  "keyword:css": "keyword.css",
+  "keyword.control:css": "keyword.css",
+  "string:css": "string.css",
+  "number:css": "number.css",
+  "operator:css": "punctuation.css",
+  "type:scss": "selector.tag.css",
+  "property:scss": "propertyName.css",
+  "property.declaration:scss": "propertyName.css",
+  "variable:scss": "identifier.css",
+  "function:scss": "identifier.function.css",
+  "keyword:scss": "keyword.css",
+  "string:scss": "string.css",
+  "number:scss": "number.css",
+  "operator:scss": "punctuation.css",
+  "type:less": "selector.tag.css",
+  "property:less": "propertyName.css",
+  "property.declaration:less": "propertyName.css",
+  "variable:less": "identifier.css",
+  "function:less": "identifier.function.css",
+  "keyword:less": "keyword.css",
+  "string:less": "string.css",
+  "number:less": "number.css",
+  "operator:less": "punctuation.css",
+  label: "identifier.other",
+  builtinType: "identifier.type.valueType",
+  "namespace.declaration": "identifier.package.go",
+  "type.declaration": "identifier.type",
+  "type.readonly": "identifier.constant",
+  "type.static": "identifier.type",
+  "type.deprecated": "problem.deprecated",
+  "class.abstract": "identifier.type.class",
+  "class.static": "identifier.type.class",
+  "class.defaultLibrary": "identifier.constant.predefined",
+  "class.deprecated": "problem.deprecated",
+  "enum.declaration": "identifier.type.enum",
+  "enum.defaultLibrary": "identifier.constant.predefined",
+  "enum.deprecated": "problem.deprecated",
+  "interface.defaultLibrary": "identifier.constant.predefined",
+  "interface.deprecated": "problem.deprecated",
+  "struct.declaration": "identifier.type.struct",
+  "struct.defaultLibrary": "identifier.constant.predefined",
+  "struct.deprecated": "problem.deprecated",
+  "typeParameter.declaration": "identifier.typeParameter",
+  "parameter.readonly": "identifier.constant",
+  "parameter.documentation": "comment.doc.value",
+  "parameter.deprecated": "problem.deprecated",
+  "variable.declaration": "identifier.variable",
+  "variable.static": "identifier.constant",
+  "variable.async": "identifier.variable",
+  "variable.deprecated": "problem.deprecated",
+  "variable.documentation": "comment.doc.value",
+  "property.declaration": "identifier.field",
+  "property.defaultLibrary": "identifier.constant.predefined",
+  "property.deprecated": "problem.deprecated",
+  "property.documentation": "comment.doc.value",
+  "enumMember.readonly": "identifier.constant",
+  "enumMember.defaultLibrary": "identifier.constant.predefined",
+  "enumMember.deprecated": "problem.deprecated",
+  "event.declaration": "identifier.function.declaration",
+  "event.defaultLibrary": "identifier.constant.predefined",
+  "event.deprecated": "problem.deprecated",
+  "function.async": "identifier.function.call",
+  "function.static": "identifier.method.static",
+  "function.defaultLibrary": "identifier.constant.predefined",
+  "function.deprecated": "problem.deprecated",
+  "function.documentation": "comment.doc.value",
+  "method.async": "identifier.function.call",
+  "method.defaultLibrary": "identifier.constant.predefined",
+  "method.deprecated": "problem.deprecated",
+  "method.documentation": "comment.doc.value",
+  "macro.declaration": "identifier.constant.predefined",
+  "macro.defaultLibrary": "identifier.constant.predefined",
+  "macro.deprecated": "problem.deprecated",
+  "keyword.documentation": "comment.doc.tag",
+  "modifier.documentation": "comment.doc.tag",
+  "comment.documentation": "comment.doc",
+  "string.documentation": "comment.doc.value",
+  "number.documentation": "comment.doc.value",
+  "regexp.documentation": "comment.doc.value",
+  "operator.documentation": "comment.doc.tag",
+  "decorator.declaration": "metadata",
+  "decorator.defaultLibrary": "identifier.constant.predefined",
+  "decorator.deprecated": "problem.deprecated"
 };
 
 const backgroundTextAttributeWorkbenchColors = new Set([
@@ -679,6 +1901,9 @@ function createThemeContext(source, theme) {
       if (value !== undefined) {
         return resolveColor(value, `textAttributes.${key}.${property}`);
       }
+      if (Object.hasOwn(theme.palette, key)) {
+        return resolveColor(key, `palette.${key}`);
+      }
     }
     return undefined;
   }
@@ -745,7 +1970,7 @@ function buildVscodeTheme(source, fleetTheme, context) {
 function buildWorkbenchColors(context) {
   const colors = {};
 
-  for (const [vscodeColor, fleetKeys] of workbenchMappings) {
+  for (const [vscodeColor, fleetKeys] of [...workbenchMappings, ...additionalWorkbenchMappings]) {
     let value;
     if (backgroundTextAttributeWorkbenchColors.has(vscodeColor)) {
       value = context.bestColor(fleetKeys, "backgroundColor");
@@ -769,8 +1994,12 @@ function buildWorkbenchColors(context) {
 
 function buildTokenColors(context) {
   const tokenColors = [];
+  const mergedTokenScopeMappings = mergeTokenScopeMappings(
+    mergeTokenScopeMappings(tokenScopeMappings, additionalTokenScopeMappings),
+    htmlCssTokenScopeMappings
+  );
 
-  for (const [fleetToken, scopes] of Object.entries(tokenScopeMappings)) {
+  for (const [fleetToken, scopes] of Object.entries(mergedTokenScopeMappings)) {
     const attribute = context.theme.textAttributes[fleetToken];
     if (!attribute) {
       continue;
@@ -812,6 +2041,17 @@ function addDiagnosticToken(tokenColors, context, fleetToken, scopes) {
   });
 }
 
+function mergeTokenScopeMappings(baseMappings, extraMappings) {
+  const merged = {};
+  for (const [fleetToken, scopes] of Object.entries(baseMappings)) {
+    merged[fleetToken] = [...scopes];
+  }
+  for (const [fleetToken, scopes] of Object.entries(extraMappings)) {
+    merged[fleetToken] = [...new Set([...(merged[fleetToken] ?? []), ...scopes])];
+  }
+  return merged;
+}
+
 function buildTextMateSettings(context, fleetToken, attribute) {
   const settings = {};
 
@@ -845,8 +2085,12 @@ function toTextMateFontStyle(attribute) {
 
 function buildSemanticTokenColors(context) {
   const semanticTokenColors = {};
+  const mergedSemanticMappings = {
+    ...semanticMappings,
+    ...additionalSemanticMappings
+  };
 
-  for (const [semanticToken, fleetToken] of Object.entries(semanticMappings)) {
+  for (const [semanticToken, fleetToken] of Object.entries(mergedSemanticMappings)) {
     const attribute = context.theme.textAttributes[fleetToken];
     if (!attribute) {
       continue;

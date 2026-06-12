@@ -19,19 +19,19 @@
   "contributes": {
     "themes": [
       {
-        "label": "Fleet Light - Edited",
+        "label": "Fleetty Light",
         "uiTheme": "vs",
-        "path": "./themes/fleet-light-edited-color-theme.json"
+        "path": "./themes/fleetty-light-color-theme.json"
       },
       {
-        "label": "Fleet Dark - Edited",
+        "label": "Fleetty Dark",
         "uiTheme": "vs-dark",
-        "path": "./themes/fleet-dark-edited-color-theme.json"
+        "path": "./themes/fleetty-dark-color-theme.json"
       },
       {
-        "label": "Dark Purple - Edited",
+        "label": "Fleetty Dark Purple",
         "uiTheme": "vs-dark",
-        "path": "./themes/dark-purple-edited-color-theme.json"
+        "path": "./themes/fleetty-dark-purple-color-theme.json"
       }
     ]
   }

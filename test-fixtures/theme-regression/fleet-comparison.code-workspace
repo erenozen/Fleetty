@@ -1,0 +1,11 @@
+{
+  "folders": [
+    {
+      "path": "../.."
+    }
+  ],
+  "settings": {
+    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false
+  }
+}
