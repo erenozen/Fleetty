@@ -52,11 +52,15 @@ This project only recreates Fleet's color palette for use in VS Code.
 
 ## Build from source
 
-The published `themes/*.json` files are generated from Fleet's exported theme files
-(`Fleetty-*.json`) by a small build script:
+The `themes/*.json` files committed here are pre-built and are exactly what the
+extension ships — no extra steps are needed to use or package it.
+
+The Fleet theme **export files are not included** in this repository. To regenerate
+the themes from scratch, export your own themes from Fleet and place them in the repo
+root as `Fleetty-Light.json`, `Fleetty-Dark.json`, and `Fleetty-Dark-Purple.json`, then:
 
 ```sh
-npm run build      # regenerate themes/*.json from the Fleet exports
+npm run build      # regenerate themes/*.json from your Fleet exports
 npm run validate   # verify the generated themes are up to date
 ```
 

@@ -3,3 +3,8 @@ node_modules/
 *.log
 .DS_Store
 .claude/
+
+# Fleet theme export files — kept local only, not redistributed (see README "Build from source")
+Fleetty-Light.json
+Fleetty-Dark.json
+Fleetty-Dark-Purple.json
