@@ -7,21 +7,25 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const checkOnly = process.argv.includes("--check");
 
+// `type` here is the color-theme file's "type" field, whose valid values are
+// "light" | "dark" | "hcLight" | "hcDark" (NOT the package.json `uiTheme` values
+// "vs"/"vs-dark"). It tells VS Code which base defaults to use for any unspecified
+// colors. The package.json contributes.themes `uiTheme` is a separate concern.
 const sources = [
   {
     source: "Fleetty-Light.json",
     output: "themes/fleetty-light-color-theme.json",
-    type: "vs"
+    type: "light"
   },
   {
     source: "Fleetty-Dark.json",
     output: "themes/fleetty-dark-color-theme.json",
-    type: "vs-dark"
+    type: "dark"
   },
   {
     source: "Fleetty-Dark-Purple.json",
     output: "themes/fleetty-dark-purple-color-theme.json",
-    type: "vs-dark"
+    type: "dark"
   }
 ];
 
@@ -63,6 +67,7 @@ const workbenchMappings = [
   ["editorGroup.border", ["border"]],
   ["editorGroup.dropBackground", ["dragAndDrop.background"]],
   ["editorGroupHeader.tabsBackground", ["background.primary"]],
+  ["editorGroupHeader.noTabsBackground", ["background.primary"]],
   ["editorGroupHeader.tabsBorder", ["border"]],
   ["editorGroupHeader.border", ["border"]],
 
@@ -196,14 +201,14 @@ const workbenchMappings = [
   ["editor.selectionBackground", ["editor.selection.focused", "editor.currentLine.background.focused"]],
   ["editor.inactiveSelectionBackground", ["editor.selection", "editor.currentLine.background.default"]],
   ["editor.selectionHighlightBackground", ["editor.currentLine.background.focused"]],
-  ["editor.wordHighlightBackground", ["editor.currentLine.background.default"]],
-  ["editor.wordHighlightStrongBackground", ["editor.currentLine.background.focused"]],
+  ["editor.wordHighlightBackground", ["identifier.underCaret", "editor.currentLine.background.default"]],
+  ["editor.wordHighlightStrongBackground", ["identifier.underCaret", "editor.currentLine.background.focused"]],
   ["editor.findMatchBackground", ["search.match.background"]],
   ["editor.findMatchForeground", ["search.match.text"]],
   ["editor.findMatchHighlightBackground", ["editor.search.results", "search.match.background"]],
   ["editor.findRangeHighlightBackground", ["editor.currentLine.background.default"]],
   ["editor.hoverHighlightBackground", ["editor.currentLine.background.focused"]],
-  ["editor.lineHighlightBackground", ["editor.currentLine.background.default"]],
+  ["editor.lineHighlightBackground", ["editor.currentLine.background.focused", "editor.currentLine.background.default"]],
   ["editor.lineHighlightBorder", ["editor.currentLine.background.focused", "border"]],
   ["editorWhitespace.foreground", ["editor.whitespaceIndicator"]],
   ["editorIndentGuide.background1", ["editor.indentGuide"]],
@@ -246,18 +251,15 @@ const workbenchMappings = [
   ["editorHint.foreground", ["text.secondary"]],
   ["editorUnnecessaryCode.opacity", ["text.disabled"]],
   ["editorUnnecessaryCode.border", ["text.disabled"]],
-  ["editorDeprecated.foreground", ["text.disabled"]],
 
   ["diffEditor.insertedTextBackground", ["diff.added.word"]],
   ["diffEditor.removedTextBackground", ["diff.deleted.word"]],
   ["diffEditor.insertedLineBackground", ["diff.added"]],
   ["diffEditor.removedLineBackground", ["diff.deleted"]],
-  ["diffEditor.modifiedLineBackground", ["diff.modified"]],
   ["diffEditor.border", ["border"]],
   ["diffEditor.diagonalFill", ["border"]],
   ["diffEditorOverview.insertedForeground", ["editor.gitDiff.background.added"]],
   ["diffEditorOverview.removedForeground", ["editor.gitDiff.background.deleted"]],
-  ["diffEditorOverview.modifiedForeground", ["editor.gitDiff.background.modified"]],
 
   ["gitDecoration.addedResourceForeground", ["editor.gitDiff.text.added"]],
   ["gitDecoration.modifiedResourceForeground", ["editor.gitDiff.text.modified"]],
@@ -494,12 +496,15 @@ const additionalWorkbenchMappings = [
   ["editor.inlineValuesBackground", ["background.secondary"]],
   ["editor.linkedEditingBackground", ["editor.currentLine.background.focused"]],
 
-  ["editorBracketHighlight.foreground1", ["Blue_110", "Blue_100", "Accent_100"]],
-  ["editorBracketHighlight.foreground2", ["Purple_110", "Violet_110"]],
-  ["editorBracketHighlight.foreground3", ["Green_110", "Green_100"]],
-  ["editorBracketHighlight.foreground4", ["Yellow_110", "Yellow_100"]],
-  ["editorBracketHighlight.foreground5", ["Red_110", "Red_100"]],
-  ["editorBracketHighlight.foreground6", ["Violet_110", "Purple_110"]],
+  // Fleet does not rainbow-colorize bracket nesting: brackets/punctuation use the
+  // plain editor text color (Fleet `punctuation` = Neutral_140). Map every nesting
+  // level to the editor text color so VSCode bracket-pair colorization matches Fleet.
+  ["editorBracketHighlight.foreground1", ["editor.text"]],
+  ["editorBracketHighlight.foreground2", ["editor.text"]],
+  ["editorBracketHighlight.foreground3", ["editor.text"]],
+  ["editorBracketHighlight.foreground4", ["editor.text"]],
+  ["editorBracketHighlight.foreground5", ["editor.text"]],
+  ["editorBracketHighlight.foreground6", ["editor.text"]],
   ["editorBracketHighlight.unexpectedBracket.foreground", ["text.dangerous"]],
   ["editorBracketPairGuide.activeBackground1", ["BlueTint_40", "AccentTint_40"]],
   ["editorBracketPairGuide.activeBackground2", ["PurpleTint_40", "VioletTint_40"]],
@@ -542,8 +547,8 @@ const additionalWorkbenchMappings = [
 
   ["debugToolBar.background", ["popup.background"]],
   ["debugToolBar.border", ["popup.border", "border"]],
-  ["editor.stackFrameHighlightBackground", ["YellowTint_30", "banner.background.warning"]],
-  ["editor.focusedStackFrameHighlightBackground", ["GreenTint_20", "banner.background.positive"]],
+  ["editor.stackFrameHighlightBackground", ["debug.currentFrame", "YellowTint_30", "banner.background.warning"]],
+  ["editor.focusedStackFrameHighlightBackground", ["debug.currentFrame", "GreenTint_20", "banner.background.positive"]],
   ["debugView.exceptionLabelForeground", ["button.dangerous.text.default"]],
   ["debugView.exceptionLabelBackground", ["button.dangerous.background.default"]],
   ["debugView.stateLabelForeground", ["text.primary"]],
@@ -657,7 +662,6 @@ const additionalWorkbenchMappings = [
   ["welcomePage.progress.foreground", ["progressBar.determinate.foreground", "progressBar.indeterminate.foreground"]],
   ["welcomePage.tileBackground", ["background.secondary"]],
   ["welcomePage.tileHoverBackground", ["listItem.background.hovered"]],
-  ["welcomePage.tileShadow", ["shadow.background.small"]],
   ["walkThrough.embeddedEditorBackground", ["island.background", "popup.editor.background", "snippet.content.background", "background.primary"]],
   ["walkthrough.stepTitle.foreground", ["text.primary"]],
 
@@ -714,7 +718,6 @@ const additionalWorkbenchMappings = [
   ["scmGraph.historyItemRemoteRefColor", ["text.ai"]],
   ["scmGraph.historyItemBaseRefColor", ["text.positive"]],
   ["scmGraph.historyItemHoverLabelForeground", ["listItem.text.hovered"]],
-  ["scmGraph.historyItemHoverLabelBackground", ["listItem.background.hovered"]],
   ["scmGraph.historyItemHoverDefaultLabelForeground", ["text.primary"]],
   ["scmGraph.historyItemHoverDefaultLabelBackground", ["background.secondary"]]
 ];
@@ -735,7 +738,12 @@ const tokenScopeMappings = {
   "entityReference.html": ["constant.character.entity.html", "constant.character.entity.xml"],
   "generic.php": ["storage.type.generic.php"],
   "hex.css": ["constant.other.color.rgb-value.css"],
-  identifier: ["variable", "variable.other.kotlin"],
+  // `constant.other.caps[.python]` is MagicPython's ALL_CAPS heuristic. Fleet does not
+  // treat Python ALL_CAPS names as constants (it renders them as plain identifiers), so
+  // map this more-specific scope to the neutral identifier color. It overrides the violet
+  // `identifier.constant` -> `constant.other` rule for Python only; JS/TS ALL_CAPS consts
+  // keep their own `variable.other.constant` scope and stay violet, matching Fleet.
+  identifier: ["variable", "variable.other.kotlin", "constant.other.caps", "constant.other.caps.python"],
   "identifier.alias.yaml": ["entity.name.type.anchor.yaml"],
   "identifier.anchor.yaml": ["entity.name.type.anchor.yaml"],
   "identifier.constant": ["constant.other", "variable.other.constant", "variable.other.constant.kotlin"],
@@ -1775,7 +1783,9 @@ const backgroundTextAttributeWorkbenchColors = new Set([
   "editor.lineHighlightBorder",
   "editorBracketMatch.background",
   "peekViewEditor.matchHighlightBackground",
-  "peekViewResult.matchHighlightBackground"
+  "peekViewResult.matchHighlightBackground",
+  "editor.stackFrameHighlightBackground",
+  "editor.focusedStackFrameHighlightBackground"
 ]);
 
 const styleValues = new Set(["ITALIC", "BOLD", "SEMI_BOLD", "LINE_THROUGH", "DASHED"]);

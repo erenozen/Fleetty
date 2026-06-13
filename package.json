@@ -1,17 +1,41 @@
 {
   "name": "fleetty-theme",
   "displayName": "Fleetty Theme",
-  "description": "VS Code color themes generated from the Fleetty theme JSON files.",
+  "description": "A pixel-faithful, unofficial VS Code port of the JetBrains Fleet color theme — Dark, Dark Purple, and Light.",
   "version": "0.0.1",
   "publisher": "fleetty",
-  "license": "UNLICENSED",
-  "icon": "logo.png",
+  "license": "MIT",
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#18191B",
+    "theme": "dark"
+  },
   "engines": {
     "vscode": "^1.90.0"
   },
   "categories": [
     "Themes"
   ],
+  "keywords": [
+    "fleet",
+    "jetbrains",
+    "jetbrains fleet",
+    "theme",
+    "color theme",
+    "dark theme",
+    "light theme",
+    "purple",
+    "minimal"
+  ],
+  "pricing": "Free",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erenozen/Fleetty.git"
+  },
+  "bugs": {
+    "url": "https://github.com/erenozen/Fleetty/issues"
+  },
+  "homepage": "https://github.com/erenozen/Fleetty#readme",
   "scripts": {
     "build": "node scripts/build-vscode-themes.mjs",
     "validate": "node scripts/build-vscode-themes.mjs --check"

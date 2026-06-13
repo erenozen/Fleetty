@@ -1,70 +1,65 @@
-# Fleetty Theme
+# Fleetty — JetBrains Fleet theme for VS Code
 
-This repository is a VS Code color theme extension generated from the three Fleet
-theme JSON files:
+A pixel-faithful port of the **JetBrains Fleet** color scheme to Visual Studio Code,
+in three variants: **Dark**, **Dark Purple**, and **Light**. Colors are taken directly
+from Fleet's own exported theme files and verified one-to-one against the Fleet editor,
+including Fleet's signature "island" layout (editor and sidebar surfaces floating on a
+darker window chrome).
 
-- `Fleetty-Light.json`
-- `Fleetty-Dark.json`
-- `Fleetty-Dark-Purple.json`
+![Fleetty Dark](images/dark.png)
 
-The generator reads those source files and writes VS Code theme files to
-`themes/`:
+## Variants
 
-- `themes/fleetty-light-color-theme.json`
-- `themes/fleetty-dark-color-theme.json`
-- `themes/fleetty-dark-purple-color-theme.json`
+| Theme | Description |
+| --- | --- |
+| **Fleetty Dark** | Fleet's default dark scheme — cyan keywords, pink strings, yellow numbers, blue types. |
+| **Fleetty Dark Purple** | The dark scheme with Fleet's purple accent (selection, current line, focus). |
+| **Fleetty Light** | Fleet's light scheme. |
 
-Source color values are preserved; the generator only resolves existing palette
-tokens and literal hex values into VS Code-compatible theme files.
+### Light
 
-## Build
+![Fleetty Light](images/light.png)
+
+## Install
+
+1. Open the **Extensions** view (`Ctrl+Shift+X` / `Cmd+Shift+X`).
+2. Search for **Fleetty**.
+3. Click **Install**.
+
+Then pick a variant with **Preferences: Color Theme** (`Ctrl+K Ctrl+T` / `Cmd+K Cmd+T`)
+and choose *Fleetty Dark*, *Fleetty Dark Purple*, or *Fleetty Light*.
+
+## What's covered
+
+- Workbench UI colors across the editor, side bar, activity bar, tabs, status bar,
+  panel, terminal, lists, inputs, notifications, diff editor, and more.
+- TextMate token scopes and **semantic token** colors for many languages, including
+  Python, JavaScript/TypeScript, Kotlin, Go, Rust, C/C++, C#, PHP, Ruby, Swift,
+  HTML/CSS/SCSS/LESS, JSON, YAML, and Markdown.
+
+Some languages need their own language extension installed for VS Code to tokenize them.
+For example, Kotlin highlighting requires a Kotlin extension such as `fwcd.kotlin`.
+
+> **Note:** A theme only controls colors. VS Code's overall layout (activity-bar
+> placement, title-bar controls, file tree, icons) differs from Fleet and is not
+> something a theme can change.
+
+## Disclaimer
+
+Fleetty is an **unofficial** theme and is **not affiliated with, endorsed by, or
+sponsored by JetBrains**. "Fleet" and "JetBrains" are trademarks of JetBrains s.r.o.
+This project only recreates Fleet's color palette for use in VS Code.
+
+## Build from source
+
+The published `themes/*.json` files are generated from Fleet's exported theme files
+(`Fleetty-*.json`) by a small build script:
 
 ```sh
-npm run build
+npm run build      # regenerate themes/*.json from the Fleet exports
+npm run validate   # verify the generated themes are up to date
 ```
 
-## Validate
+## License
 
-```sh
-npm run validate
-```
-
-## Try In VS Code
-
-Open this folder in VS Code, press `F5`, then choose one of the Fleetty themes
-from `Preferences: Color Theme` in the Extension Development Host window.
-
-## Coverage
-
-The generated themes include workbench colors, TextMate token scopes, and
-semantic token mappings for common VS Code UI surfaces and language extensions.
-
-## Manual Regression Fixture
-
-Open the files in `test-fixtures/theme-regression/` in the Extension Development
-Host to compare editor backgrounds and syntax tokens against Fleet. Use
-`Developer: Inspect Editor Tokens and Scopes` on Python `if` to confirm it uses
-the Fleet keyword color.
-For HTML/CSS parity checks, open `privacy-policy.html` and inspect `--bg`,
-`#0f1117`, `@media`, `:root`, `body`, `font-family`, and `<meta>`.
-
-For screenshot comparisons against Fleet, open
-`test-fixtures/theme-regression/fleet-comparison.code-workspace` or apply these
-workspace settings:
-
-```json
-{
-  "breadcrumbs.enabled": false,
-  "editor.minimap.enabled": false
-}
-```
-
-VS Code layout cannot be made identical to Fleet through a theme alone. Activity
-bar placement, title bar controls, Explorer/Files structure, extension icons, and
-some panel chrome are controlled by VS Code and installed extensions.
-
-## Kotlin Highlighting
-
-This theme includes Kotlin scope mappings, but VS Code still needs a Kotlin
-language extension to tokenize `.kt` files. Install the `fwcd.kotlin` extension
-if Kotlin files appear mostly uncolored in the Extension Development Host.
+[MIT](LICENSE) © Eren Özen

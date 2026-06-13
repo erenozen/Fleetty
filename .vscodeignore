@@ -1,0 +1,23 @@
+# Dev tooling and editor config — not needed at runtime
+.vscode/**
+.github/**
+.git/**
+.gitignore
+.gitattributes
+.claude/**
+.vscodeignore
+
+# Theme build pipeline and its source/test inputs (themes/*.json are pre-built)
+scripts/**
+test-fixtures/**
+Fleetty-Light.json
+Fleetty-Dark.json
+Fleetty-Dark-Purple.json
+
+# Original full-resolution logo (the packaged icon is icon.png)
+logo.png
+
+# Packaging / misc artifacts
+**/*.vsix
+**/.DS_Store
+**/Thumbs.db
