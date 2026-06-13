@@ -5,6 +5,9 @@
   "version": "0.0.3",
   "publisher": "fleetty",
   "license": "MIT",
+  "contributors": [
+    { "name": "Elifbusra", "url": "https://github.com/Elifbusra" }
+  ],
   "icon": "icon.png",
   "galleryBanner": {
     "color": "#18191B",

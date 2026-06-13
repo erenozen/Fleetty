@@ -64,6 +64,10 @@ npm run build      # regenerate themes/*.json from your Fleet exports
 npm run validate   # verify the generated themes are up to date
 ```
 
+## Credits
+
+Huge thanks to [@Elifbusra](https://github.com/Elifbusra) for the *Fleetty* name and the logo 💜
+
 ## License
 
 [MIT](LICENSE) © Eren Özen
