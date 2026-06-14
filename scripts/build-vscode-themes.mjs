@@ -1791,6 +1791,21 @@ const backgroundTextAttributeWorkbenchColors = new Set([
   "editor.focusedStackFrameHighlightBackground"
 ]);
 
+// Fleet separates workbench surfaces with spacing ("islands"), not 1px seam lines.
+// Mapping these region-separator borders to Fleet's `border` token drew faint white
+// lines between same-colored chrome regions (title bar / activity bar / tabs / side
+// bar). Force them transparent so those surfaces blend the way they do in Fleet.
+const transparentSeamBorders = new Set([
+  "titleBar.border",
+  "activityBar.border",
+  "sideBar.border",
+  "sideBarActivityBarTop.border",
+  "editorGroupHeader.tabsBorder",
+  "editorGroupHeader.border",
+  "panel.border",
+  "statusBar.border"
+]);
+
 const styleValues = new Set(["ITALIC", "BOLD", "SEMI_BOLD", "LINE_THROUGH", "DASHED"]);
 const hexColorPattern = /^#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$/;
 
@@ -2000,6 +2015,11 @@ function buildWorkbenchColors(context) {
     if (value) {
       colors[vscodeColor] = value;
     }
+  }
+
+  // Remove same-colored chrome seams (see transparentSeamBorders above).
+  for (const key of transparentSeamBorders) {
+    colors[key] = "#FFFFFF00";
   }
 
   return colors;
