@@ -714,8 +714,11 @@ const additionalWorkbenchMappings = [
   ["scmGraph.foreground3", ["Yellow_110", "Yellow_100"]],
   ["scmGraph.foreground4", ["Purple_110", "Violet_110"]],
   ["scmGraph.foreground5", ["Red_110", "Red_100"]],
-  ["scmGraph.historyItemRefColor", ["text.primary"]],
-  ["scmGraph.historyItemRemoteRefColor", ["text.ai"]],
+  // Inline ref chips in the Source Control Graph. Use Fleet's branch-tag colors so the
+  // current/local branch chip is blue and the remote chip is purple (consistent + readable),
+  // instead of text.primary which renders as a near-white/near-black solid box.
+  ["scmGraph.historyItemRefColor", ["gitBranchTag.local.text", "text.primary"]],
+  ["scmGraph.historyItemRemoteRefColor", ["gitBranchTag.remote.text", "text.ai"]],
   ["scmGraph.historyItemBaseRefColor", ["text.positive"]],
   ["scmGraph.historyItemHoverLabelForeground", ["listItem.text.hovered"]],
   ["scmGraph.historyItemHoverDefaultLabelForeground", ["text.primary"]],
