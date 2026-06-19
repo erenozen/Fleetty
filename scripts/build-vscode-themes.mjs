@@ -42,7 +42,7 @@ const workbenchMappings = [
   ["textSeparator.foreground", ["separator.default", "border"]],
   ["textBlockQuote.background", ["banner.inline.background", "banner.background.inline", "background.secondary"]],
   ["textBlockQuote.border", ["banner.inline.border", "border"]],
-  ["textCodeBlock.background", ["snippet.content.background", "background.secondary"]],
+  ["textCodeBlock.background", ["shortcut.background", "background.secondary"]],
 
   ["window.activeBorder", ["border.focused"]],
   ["window.inactiveBorder", ["border"]],
@@ -393,7 +393,10 @@ const additionalWorkbenchMappings = [
   ["widget.shadow", ["shadow.background.medium", "shadow.background.small"]],
   ["sash.hoverBorder", ["border.focused"]],
   ["textPreformat.foreground", ["text.primary"]],
-  ["textPreformat.background", ["snippet.content.background", "background.secondary"]],
+  // Inline `code` / fenced code blocks in rendered markdown (hovers, previews, chat) need a
+  // chip that stands out on any surface. Use Fleet's translucent keycap background instead of
+  // snippet.content.background, which resolved to the same color as the surrounding surface.
+  ["textPreformat.background", ["shortcut.background", "background.secondary"]],
   ["textPreformat.border", ["snippet.content.border", "border"]],
 
   ["toolbar.hoverBackground", ["ghostButton.off.background.hovered", "button.secondary.background.hovered"]],
@@ -585,7 +588,7 @@ const additionalWorkbenchMappings = [
   ["testing.iconSkipped", ["text.disabled"]],
   ["testing.peekBorder", ["border.focused"]],
   ["testing.peekHeaderBackground", ["background.secondary"]],
-  ["testing.message.error.decorationForeground", ["text.dangerous"]],
+  ["testing.message.error.badgeForeground", ["text.dangerous"]],
   ["testing.message.error.lineBackground", ["banner.background.dangerous"]],
   ["testing.message.info.decorationForeground", ["button.primary.background.default"]],
   ["testing.message.info.lineBackground", ["banner.background.info"]],
