@@ -2,7 +2,7 @@
   "name": "fleetty-theme",
   "displayName": "Fleetty Theme",
   "description": "A pixel-faithful, unofficial VS Code port of the JetBrains Fleet color theme — Dark, Dark Purple, and Light.",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "publisher": "fleetty",
   "license": "MIT",
   "contributors": [
