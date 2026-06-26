@@ -154,7 +154,11 @@ const workbenchMappings = [
   ["input.placeholderForeground", ["inputField.hint.default"]],
   ["inputOption.activeBackground", ["toggleButton.on.background.default", "button.secondary.background.hovered"]],
   ["inputOption.activeForeground", ["toggleButton.on.text.default", "text.primary"]],
-  ["inputOption.activeBorder", ["toggleButton.on.border.default", "border.focused"]],
+  // Must be a visible accent, not transparent: besides VS Code's own active find-toggle
+  // border, webviews (e.g. Claude Code's switch) use --vscode-inputOption-activeBorder as
+  // the "on" track/fill color. Fleet's toggleButton.on.border is transparent (its toggle is
+  // a filled pill), which made those switches render as just a knob with no visible track.
+  ["inputOption.activeBorder", ["border.focused"]],
   ["inputValidation.errorBackground", ["layout.error", "inputField.background.error", "banner.background.dangerous"]],
   ["inputValidation.errorForeground", ["inputField.text.error", "text.dangerous"]],
   ["inputValidation.errorBorder", ["inputField.border.error"]],
